@@ -6,9 +6,19 @@ public class Funcionario {
 
 	private String nome;
 
+	private int matricula;
+
 	private double salarioBase;
 
 	private Cargo cargo;
+
+	public Cargo getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
+	}
 
 	public String getNome() {
 		return nome;
@@ -16,6 +26,14 @@ public class Funcionario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public int getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(int matricula) {
+		this.matricula = matricula;
 	}
 
 	public double getSalarioBase() {
@@ -26,11 +44,7 @@ public class Funcionario {
 		this.salarioBase = salarioBase;
 	}
 
-	public Cargo getCargo() {
-		return cargo;
-	}
-
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
+	public double calculaSalario() {
+		return this.getCargo().getRegra().calcula(this);
 	}
 }
